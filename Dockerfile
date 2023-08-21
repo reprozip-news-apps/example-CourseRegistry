@@ -1,3 +1,5 @@
-FROM php:8.2.9-apache
+FROM php:5.6-apache
 
+RUN docker-php-ext-install pdo pdo_mysql
 COPY . /var/www/html/
+COPY apache-site.conf /etc/apache2/sites-available/000-default.conf

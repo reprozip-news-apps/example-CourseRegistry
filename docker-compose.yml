@@ -8,6 +8,6 @@ services:
     ports:
       - "127.0.0.1:80:80"
   mysql:
-    image: mysql:8.1
+    image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: hackme
