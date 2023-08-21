@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+    volumes:
+      - ".:/var/www/html/"
+    ports:
+      - "127.0.0.1:80:80"
+  mysql:
+    image: mysql:8.1
+    environment:
+      MYSQL_ROOT_PASSWORD: hackme
