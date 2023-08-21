@@ -69,10 +69,10 @@ class DATABASE_CONFIG {
 	public $default = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => '[ToDo]',
-		'login' => '[ToDo]',
-		'password' => '[ToDo]',
-		'database' => '[ToDo]',
+		'host' => 'mysql',
+		'login' => 'root',
+		'password' => 'hackme',
+		'database' => 'cake',
 		'prefix' => '',
 		'encoding' => 'utf8',
 	);
