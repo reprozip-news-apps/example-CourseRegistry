@@ -15,13 +15,13 @@ Configure::write('App.fullBaseUrl', 'https://dariah.uni-koeln.de');
 Configure::write('App.EmailSubjectPrefix', '[DH Course Registry]');
 
 // send an update reminder after this period, show red in the user dashboard
-Configure::write('App.CourseWarnPeriod', (60*60*24*300));
+Configure::write('App.CourseWarnPeriod', (60*60*24*3650));
 // show red in the public listing
-Configure::write('App.CoursePublicWarnPeriod', (Configure::read('App.CourseWarnPeriod') + 60*60*24*7*4));
+Configure::write('App.CoursePublicWarnPeriod', (Configure::read('App.CourseWarnPeriod') + 60*60*24*3650));
 // stop displaying course on homepage
-Configure::write('App.CourseExpirationPeriod', (60*60*24*365*2));
+Configure::write('App.CourseExpirationPeriod', (60*60*24*3650));
 // courses not updated for this period will be hidden at all, for archival purposes
-Configure::write('App.CourseArchivalPeriod', (60*60*24*365*5));
+Configure::write('App.CourseArchivalPeriod', (60*60*24*3650));
 
 
 
