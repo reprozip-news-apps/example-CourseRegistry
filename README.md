@@ -15,4 +15,12 @@ For local adjustments (e.g. database access and Google API access) please change
 * check if CURL extension is installed in PHP
 * SSL certificate
 
+Steps:
 
+* `docker-compose up -d`
+* `docker cp app/Config.template/Schema/DHPR-dump.sql courseregistry-mysql-1:/tmp/dump.sql`
+* `chown -R 33:33 app/tmp`
+* `docker-compose exec mysql bash`
+    * `mysql -u root -p` (password `hackme`)
+        * `create database cake;`
+    * `mysql -u root -p cake < /tmp/dump.sql`
