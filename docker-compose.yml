@@ -11,3 +11,5 @@ services:
     image: mysql:8.0
     environment:
       MYSQL_ROOT_PASSWORD: hackme
+    volumes:
+      - ./mysql-charset.cnf:/etc/mysql/conf.d/charset.cnf:ro
