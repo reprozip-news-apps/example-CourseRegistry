@@ -13,3 +13,4 @@ services:
       MYSQL_ROOT_PASSWORD: hackme
     volumes:
       - ./mysql-charset.cnf:/etc/mysql/conf.d/charset.cnf:ro
+      - ./mysql-password.cnf:/etc/mysql/conf.d/password.cnf:ro
