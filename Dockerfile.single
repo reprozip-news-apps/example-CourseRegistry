@@ -1,0 +1,8 @@
+FROM ghcr.io/remram44/selkies-docker-nvidia-egl-desktop:20.04-20230816t031223z
+
+RUN apt-get install -yy software-properties-common && \
+    add-apt-repository ppa:ondrej/php && \
+    apt-get install -yy apache2 libapache2-mod-php5.6 && \
+    apt-get install -yy mysql-server
+COPY mysql-charset.cnf /etc/mysql/conf.d/charset.cnf
+COPY mysql-password.cnf /etc/mysql/conf.d/password.cnf

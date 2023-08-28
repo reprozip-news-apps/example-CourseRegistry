@@ -1,0 +1,21 @@
+version: '3'
+services:
+  single:
+    build:
+      context: .
+      dockerfile: Dockerfile.single
+    environment:
+      TZ: "UTC"
+      SIZEW: "1920"
+      SIZEH: "1080"
+      REFRESH: "60"
+      DPI: "96"
+      CDEPTH: "24"
+      VIDEO_PORT: "DP-0"
+      PASSWD: "hackme"
+      NOVNC_ENABLE: "true"
+    volumes:
+      - ".:/var/www/html/"
+    ports:
+      - "127.0.0.1:80:80" # Apache
+      - "127.0.0.1:8080:8080" # VNC
