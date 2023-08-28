@@ -18,9 +18,13 @@ For local adjustments (e.g. database access and Google API access) please change
 Steps:
 
 * `docker-compose up -d`
-* `docker cp app/Config.template/Schema/DHPR-dump.sql courseregistry-mysql-1:/tmp/dump.sql`
+* `docker cp app/Config.template/Schema/DHPR-dump.sql courseregistry-single-1:/tmp/dump.sql`
 * `chown -R 33:33 app/tmp`
+* `/etc/init.d/mysql start`
+* `/etc/init.d/apache2 start`
 * `docker-compose exec mysql bash`
-    * `mysql -u root -p` (password `hackme`)
+    * `mysql -u root`
         * `create database cake;`
-    * `mysql -u root -p cake < /tmp/dump.sql`
+        * `create user 'cake'@'localhost' identified by 'hackme';`
+        * `grant all on cake.* to 'cake'@'localhost';`
+    * `mysql -u root cake < /tmp/dump.sql`
